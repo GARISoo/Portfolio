@@ -1,0 +1,140 @@
+.header {
+    background-color: black;
+    height: 85px;
+    position: relative;
+    border-bottom: 6px solid #8f790e;
+}
+
+.navigation {
+    position: absolute;
+    left: 45%;
+    bottom: -75%;
+    width: 250px;
+    height: 70px;
+    background-image: linear-gradient(#d4c58a 0%, #8f790e 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    margin: 2rem auto;
+}
+
+.navigation__ul {
+    display: flex;
+    width: 200px;
+    position: relative;
+}
+
+.navigation__li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.active .navigation__icon {
+    transform: translateY(-33px);
+}
+
+.active .navigation__text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.navigation__a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.navigation__text {
+    position: absolute;
+    color: black;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.navigation__icon {
+    position: relative;
+    display: block;
+    margin: 1rem;
+    height: 45px;
+    padding: .9rem;
+    font-size: 1.5em;
+    text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+
+.navigation__indicator {
+    position: absolute;
+    top: -50%;
+    width: 60px;
+    height: 60px;
+    background: #d4c58a;
+    border-radius: 50%;
+    border: 6px solid black;
+    transition: 0.5s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -22px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-top-right-radius: 20px;
+        box-shadow: 1px -10px 0 0 black;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-top-left-radius: 20px;
+        box-shadow: -1px -10px 0 0 black;
+    }
+}
+
+.icon-resume {
+    background-image: url('https://www.svgrepo.com/show/195457/curriculum-portfolio.svg');
+}
+
+.icon-home {
+    background-image: url('https://www.svgrepo.com/show/18449/home.svg');
+}
+
+.icon-contact {
+    background-image: url('https://www.svgrepo.com/show/354897/contact.svg');
+}
+
+.navigation__li:nth-child(1).active ~ .navigation__indicator {
+    transform: translateX(3px);
+}
+
+.navigation__li:nth-child(2).active ~ .navigation__indicator {
+    transform: translateX(70px);
+}
+
+.navigation__li:nth-child(3).active ~ .navigation__indicator {
+    transform: translateX(136px);
+}
+
+
